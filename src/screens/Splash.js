@@ -12,37 +12,35 @@ import { useNavigation } from "@react-navigation/native";
 function Splash() {
   const navigation = useNavigation();
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <View style={styles.languageContainer}>
-          <Text style={styles.languageText}>English</Text>
-        </View>
-        <Image
-          source={require("../assets/basf-certificate.png")}
-          style={{ width: 299, height: 373 }}
-        />
-        <Text style={styles.title}>Discover more about you</Text>
-        <Text style={styles.description}>
-          Have you ever wondered what does your daily life products contain?
-          What are you exactly buing? With BASF app you can find out this and
-          much more!
-        </Text>
-        <TouchableHighlight
-          style={styles.submit}
-          onPress={() => navigation.navigate("Home")}
-          underlayColor="#fff"
-        >
-          <Text style={styles.submitText}>START</Text>
-        </TouchableHighlight>
-        <View style={styles.logoContainer}>
-          <Text style={styles.textLogo}>Powered by:</Text>
-          <Image
-            source={require("../assets/basf-logo.png")}
-            style={styles.imageLogo}
-          />
-        </View>
+    <View style={styles.container}>
+      <View style={styles.languageContainer}>
+        <Text style={styles.languageText}>English</Text>
       </View>
-    </SafeAreaView>
+      <Image
+        source={require("../assets/basf-certificate.png")}
+        style={{ width: 299, height: 373 }}
+      />
+      <Text style={styles.title}>Discover more about you</Text>
+      <Text style={styles.description}>
+        Have you ever wondered what does your daily life products contain? What
+        are you exactly buing? With BASF app you can find out this and much
+        more!
+      </Text>
+      <TouchableHighlight
+        style={styles.submit}
+        onPress={() => navigation.navigate("Home")}
+        underlayColor="#fff"
+      >
+        <Text style={styles.submitText}>START</Text>
+      </TouchableHighlight>
+      <View style={styles.logoContainer}>
+        <Text style={styles.textLogo}>Powered by:</Text>
+        <Image
+          source={require("../assets/basf-logo.png")}
+          style={styles.imageLogo}
+        />
+      </View>
+    </View>
   );
 }
 
@@ -65,6 +63,7 @@ const styles = StyleSheet.create({
     height: "100vh",
     paddingHorizontal: 30,
     paddingTop: 60,
+    flex: 1,
   },
   title: {
     fontSize: 22,

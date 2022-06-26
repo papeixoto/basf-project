@@ -1,19 +1,24 @@
 import React from "react";
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-function Footer() {
+function Footer({ active = 0 }) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <View style={styles.iconContainer}>
+      <TouchableOpacity
+        style={active === 0 ? styles.iconContainer : undefined}
+        onPress={() => navigation.navigate("Home")}
+      >
         <Image
           source={require("../assets/icons/home.png")}
-          style={[styles.icon, styles.activeIcon]}
+          style={[styles.icon, active === 0 ? styles.activeIcon : undefined]}
         />
-      </View>
-      <View>
+      </TouchableOpacity>
+      <View style={active === 1 ? styles.iconContainer : undefined}>
         <Image
           source={require("../assets/icons/square.png")}
-          style={styles.icon}
+          style={[styles.icon, active === 1 ? styles.activeIcon : undefined]}
         />
       </View>
       <View>
